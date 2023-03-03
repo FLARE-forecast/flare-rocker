@@ -3,6 +3,7 @@ FROM rocker/geospatial:4.2.1
 # Import GitHub Secret
 ARG PAT
 RUN echo "My GitHub PAT is $PAT"
+ENV PAT=$PAT
 
 ## Declares build arguments
 #ARG NB_USER
