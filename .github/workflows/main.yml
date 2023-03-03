@@ -18,9 +18,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push 1
+      - name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/flare-rocker:4.2.1
-          build-args: GIT_PAT=${{ secrets.GIT_PAT }}
+          build-args: GIT_PAT=${{ secrets.PAT }}
