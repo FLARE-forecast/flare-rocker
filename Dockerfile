@@ -19,7 +19,7 @@ ENV PAT=$PAT
 # #USER ${NB_USER}
 
 # RUN install2.r devtools remotes arrow renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 bench contentid yaml RCurl here feasts gsheet usethis
-RUN R -e "for (i in 1:300) { devtools::install_github('hadley/assertthat', force = TRUE, auth_token ='$PAT')}"
+RUN R -e "for (i in 1:300) { devtools::install_github('hadley/assertthat', force = TRUE) }"
 RUN R -e "devtools::install_github('eco4cast/EFIstandards', auth_token ='$PAT')"
 RUN R -e "devtools::install_github('eco4cast/neon4cast', auth_token ='$PAT')"
 RUN R -e "devtools::install_github('rqthomas/cronR', auth_token ='$PAT')"
