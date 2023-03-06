@@ -12,13 +12,13 @@ ENV PAT=$PAT
 # COPY --chown=${NB_USER} . ${HOME}
 
 # USER root
-RUN apt-get update && apt-get -y install cron
-RUN apt-get update && apt-get -y install jags
-RUN apt-get update && apt-get -y install libgd-dev
+# RUN apt-get update && apt-get -y install cron
+# RUN apt-get update && apt-get -y install jags
+# RUN apt-get update && apt-get -y install libgd-dev
 
 # USER ${NB_USER}
 
-RUN install2.r devtools remotes arrow renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 bench contentid yaml RCurl here feasts gsheet usethis
+# RUN install2.r devtools remotes arrow renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 bench contentid yaml RCurl here feasts gsheet usethis
 # RUN R -e "for (i in 1:70) { devtools::install_github('FLARE-forecast/GLM3r', auth_token ='$PAT', upgrade = 'never') }"
 # RUN R -e "for (i in 1:70) { devtools::install_github('hadley/assertthat', force = TRUE, auth_token ='$PAT', upgrade = 'never') }"
 RUN R -e "devtools::install_github('eco4cast/EFIstandards', auth_token ='$PAT', upgrade = 'never')"
