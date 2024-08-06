@@ -47,6 +47,6 @@ RUN R -e "devtools::install_github('FLARE-forecast/FLAREr')"
 #RUN sleep 180
 #RUN R -e "devtools::install_github('FLARE-forecast/GLM3r')" 
 
-RUN apt-get install libmagick++-dev
+RUN apt-get install -y libmagick++-dev
 
 COPY cron.sh /etc/services.d/cron/run
