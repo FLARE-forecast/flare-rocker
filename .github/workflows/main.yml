@@ -24,5 +24,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flare-rocker:4.3.2
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flare-rocker:4.4
 
