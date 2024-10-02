@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y install libgd-dev
 RUN install2.r devtools remotes arrow renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 RcppRoll
 RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels xgboost rMR
 RUN sleep 180
-RUN R -e "devtools::install_github('FLARE-forecast/FLAREr', ref = 'single-parameter')"
+RUN R -e "devtools::install_github('FLARE-forecast/FLAREr', ref = 'v3.0.0')"
 RUN sleep 180
 RUN R -e "devtools::install_github('cboettig/aws.s3')"
 RUN sleep 180
