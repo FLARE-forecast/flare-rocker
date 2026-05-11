@@ -4,8 +4,10 @@ FROM rocker/geospatial:4.4
 RUN apt-get update && apt-get -y install libgd-dev
 
 RUN install2.r devtools remotes arrow renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 RcppRoll
-RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels xgboost rMR
+RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels rMR
 RUN sleep 180
+
+RUN R -e "install.packages('xgboost', repos='http://cran.rstudio.com/')"
 RUN R -e "devtools::install_github('FLARE-forecast/FLAREr', ref = 'v3.0.4')"
 RUN sleep 180
 RUN R -e "devtools::install_github('cboettig/aws.s3')"
