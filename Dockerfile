@@ -8,6 +8,7 @@ RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels 
 RUN sleep 180
 
 RUN R -e "install.packages('xgboost', repos='http://cran.rstudio.com/')"
+RUN sleep 180
 RUN R -e "devtools::install_github('FLARE-forecast/FLAREr', ref = 'v3.0.4')"
 RUN sleep 180
 RUN R -e "devtools::install_github('cboettig/aws.s3')"
