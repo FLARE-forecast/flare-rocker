@@ -1,14 +1,13 @@
 FROM rocker/geospatial:4.6
 
 # USER root
-RUN apt-get update && apt-get -y install libgd-dev debhelper
+RUN apt-get update && apt-get -y install libgd-dev debhelper libmagick++-dev
 
 RUN install2.r devtools remotes arrow renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 RcppRoll
 RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels rMR
 RUN sleep 180
 
 RUN R -e "install.packages('xgboost', repos='http://cran.rstudio.com/')"
-RUN sleep 180
 RUN R -e "devtools::install_github('FLARE-forecast/FLAREr', ref = 'v4.0.0')"
 RUN sleep 180
 RUN R -e "devtools::install_github('cboettig/aws.s3')"
@@ -19,5 +18,3 @@ RUN R -e "devtools::install_github('eco4cast/neon4cast')"
 RUN sleep 180
 RUN R -e "devtools::install_github('flare-forecast/GLMAEDr')"
 RUN R -e "GLMAEDr::glm_install()"
-
-RUN apt-get install -y libmagick++-dev
