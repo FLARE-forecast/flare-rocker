@@ -1,7 +1,7 @@
 FROM rocker/geospatial:4.6
 
 # USER root
-RUN apt-get update && apt-get -y install libgd-dev
+RUN apt-get update && apt-get -y install libgd-dev debhelper
 
 RUN install2.r devtools remotes arrow renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 RcppRoll
 RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels rMR
@@ -17,8 +17,6 @@ RUN R -e "devtools::install_github('eco4cast/score4cast')"
 RUN sleep 180
 RUN R -e "devtools::install_github('eco4cast/neon4cast')"
 RUN sleep 180
-RUN R -e "devtools::install_github('rqthomas/glmtools')"
-RUN sleep 180
-RUN R -e "devtools::install_github('rqthomas/GLM3r')" 
+RUN R -e "devtools::install_github('flare-forecast/GLMAEDr')"
 
 RUN apt-get install -y libmagick++-dev
