@@ -18,5 +18,6 @@ RUN sleep 180
 RUN R -e "devtools::install_github('eco4cast/neon4cast')"
 RUN sleep 180
 RUN R -e "devtools::install_github('flare-forecast/GLMAEDr')"
+RUN R -e "GLMAEDr::glm_install()"
 
 RUN apt-get install -y libmagick++-dev
