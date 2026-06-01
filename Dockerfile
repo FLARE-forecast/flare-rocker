@@ -9,8 +9,7 @@ RUN sleep 180
 
 RUN R -e "install.packages('xgboost', repos='http://cran.rstudio.com/')"
 RUN --mount=type=secret,id=GH_PAT \
-    R -e "Sys.setenv(GITHUB_PATY = readLines('/run/secrets/GH_PAT'))"
-RUN R -e "remotes::install_github('FLARE-forecast/FLAREr', ref = 'v4.0.1')"
+    R -e "Sys.setenv(GITHUB_PAT = readLines('/run/secrets/GH_PAT')); remotes::install_github('FLARE-forecast/FLAREr', ref = '2ec6dfb6eafe73c0462f435b682bba66939c8d81')"
 RUN sleep 180
 RUN R -e "remotes::install_github('cboettig/aws.s3')"
 RUN sleep 180
