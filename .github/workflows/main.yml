@@ -25,4 +25,6 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/flare-rocker:4.0.0
+          secrets: |
+            GITHUB_PAT=${{ secrets.GITHUB_PAT }}
 
