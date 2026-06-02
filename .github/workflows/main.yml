@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flare-rocker:4.0.1
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flare-rocker:4.0.2
           secrets: |
             GH_PAT=${{ secrets.PAT }}
 
