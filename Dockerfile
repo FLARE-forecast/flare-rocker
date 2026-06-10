@@ -18,3 +18,4 @@ RUN sleep 180
 RUN R -e "remotes::install_github('eco4cast/neon4cast')"
 RUN sleep 180
 RUN R -e "remotes::install_github('flare-forecast/GLMAEDr')"
+RUN R -e "GLMAEDr::glm_install()"
