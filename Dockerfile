@@ -3,8 +3,8 @@ FROM rocker/geospatial:4.6
 # USER root
 RUN apt-get update && apt-get -y install libgd-dev debhelper libmagick++-dev fakeroot
 
-RUN R -e "install.packages("pak")
-RUN R -e "pak::pak("arrow@23.0.0")
+RUN R -e "install.packages('pak')"
+RUN R -e "pak::pak('arrow@23.0.0')"
 
 RUN install2.r devtools remotes renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 RcppRoll
 RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels rMR
