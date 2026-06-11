@@ -3,7 +3,10 @@ FROM rocker/geospatial:4.6
 # USER root
 RUN apt-get update && apt-get -y install libgd-dev debhelper libmagick++-dev fakeroot
 
-RUN install2.r devtools remotes arrow renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 RcppRoll
+RUN R -e "install.packages("pak")
+RUN R -e "pak::pak("arrow@23.0.0")
+
+RUN install2.r devtools remotes renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 RcppRoll
 RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels rMR
 RUN sleep 180
 
@@ -19,5 +22,3 @@ RUN R -e "remotes::install_github('eco4cast/neon4cast')"
 RUN sleep 180
 RUN R -e "remotes::install_github('flare-forecast/GLMAEDr')"
 RUN R -e "GLMAEDr::glm_install()"
-RUn R -e "devtools::install_version('arrow', version = '23.0.0', repos = 'http://cran.us.r-project.org')"
-
