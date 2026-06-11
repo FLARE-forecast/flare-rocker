@@ -19,3 +19,5 @@ RUN R -e "remotes::install_github('eco4cast/neon4cast')"
 RUN sleep 180
 RUN R -e "remotes::install_github('flare-forecast/GLMAEDr')"
 RUN R -e "GLMAEDr::glm_install()"
+RUn R -e "devtools::install_version('arrow', version = '23.0.0', repos = 'http://cran.us.r-project.org')"
+
