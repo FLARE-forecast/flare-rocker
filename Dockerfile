@@ -7,7 +7,7 @@ RUN install2.r devtools remotes renv RNetCDF forecast imputeTS ncdf4 scoringRule
 RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels rMR
 
 RUN --mount=type=secret,id=GH_PAT \
-    R -e "Sys.setenv(GITHUB_PAT = readLines('/run/secrets/GH_PAT')); remotes::install_github('FLARE-forecast/FLAREr', ref = 'v4.0.3')"
+    R -e "Sys.setenv(GITHUB_PAT = readLines('/run/secrets/GH_PAT')); remotes::install_github('FLARE-forecast/FLAREr', ref = 'v4.0.4')"
 RUN sleep 180
 RUN R -e "remotes::install_github('cboettig/aws.s3')"
 RUN sleep 180
