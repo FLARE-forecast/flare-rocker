@@ -17,4 +17,5 @@ RUN R -e "remotes::install_github('eco4cast/neon4cast')"
 RUN sleep 180
 RUN R -e "remotes::install_github('flare-forecast/GLMAEDr')"
 RUN R -e "GLMAEDr::glm_install()"
-RUN R -e "file.copy(glm_path(), '/home/.')"
+RUN R -e "getwd()"
+RUN R -e "file.copy(GLMAEDr::glm_path(), '/home/.')"
