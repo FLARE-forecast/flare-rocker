@@ -1,4 +1,4 @@
-name: build docker container
+name: build FLAREr open docker container
 
 on:
   workflow_dispatch:
