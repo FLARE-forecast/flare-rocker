@@ -23,6 +23,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
+          platforms: linux/amd64,linux/arm64
           context: "{{defaultContext}}:FLAREr"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/flare-rocker-open:3.9.0
