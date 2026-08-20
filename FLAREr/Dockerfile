@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y install libgd-dev debhelper libmagick++-dev fak
 RUN install2.r devtools remotes renv RNetCDF forecast imputeTS ncdf4 scoringRules tidybayes tidync udunits2 RcppRoll
 RUN install2.r bench contentid yaml RCurl here feasts gsheet usethis tidymodels rMR
 
-RUN R remotes::install_github('FLARE-forecast/FLAREr', ref = 'v3.9.0')"
+RUN R -e "remotes::install_github('FLARE-forecast/FLAREr', ref = 'v3.9.0')"
 RUN sleep 180
 RUN R -e "remotes::install_github('cboettig/aws.s3')"
 RUN sleep 180
