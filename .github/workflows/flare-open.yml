@@ -23,7 +23,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: FLAREr/.
+          context: "{{defaultContext}}:FLAREr"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/flare-rocker-open:3.9.0
           secrets: |
