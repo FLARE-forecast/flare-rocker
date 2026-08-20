@@ -17,4 +17,4 @@ RUN sleep 180
 RUN R -e "remotes::install_github('flare-forecast/GLMAEDr')"
 RUN R -e "GLMAEDr::glm_install()"
 RUN R -e "getwd()"
-RUN R -e "file.copy(GLMAEDr::glm_path(), '/.')"test
+RUN R -e "file.copy(GLMAEDr::glm_path(), '/.')"
