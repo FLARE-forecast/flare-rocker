@@ -17,7 +17,7 @@ RUN R -e "remotes::install_github('eco4cast/neon4cast')"
 RUN sleep 180
 RUN R -e "remotes::install_github('usgs-r/glmtools', force = T, upgrade = 'never')"
 RUN sleep 180
-RUN R -e "remotes::install_github("FLARE-forecast/ropenmeteo", force = T, upgrade = "never")"
+RUN R -e "remotes::install_github('FLARE-forecast/ropenmeteo', force = T, upgrade = 'never')"
 RUN sleep 180
 RUN R -e "remotes::install_github('flare-forecast/GLMAEDr')"
 RUN R -e "GLMAEDr::glm_install()"
